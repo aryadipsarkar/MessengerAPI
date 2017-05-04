@@ -15,7 +15,7 @@ import javax.ws.rs.core.MediaType;
 import org.arya.messenger.model.Profile;
 import org.arya.messenger.service.ProfileService;
 
-@Path("/profiles")
+@Path("/secured/profiles")
 @Consumes(MediaType.APPLICATION_XML)
 @Produces(MediaType.APPLICATION_XML)
 public class ProfileResources {

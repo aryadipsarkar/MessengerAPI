@@ -2,9 +2,6 @@ package org.arya.messenger.model;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
-/**
- * Created by arya's on 5/2/2017.
- */
 @XmlRootElement  //because we want to convert this to JSON/XMl
 public class ErrorMessage {
     private String errorMessage;

@@ -4,9 +4,6 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.ext.ExceptionMapper;
 import javax.ws.rs.ext.Provider;
 
-/**
- * Created by arya's on 5/2/2017.
- */
 @Provider
 public class GenericExceptionMapper implements ExceptionMapper<Throwable> {
     public Response toResponse(Throwable e) {

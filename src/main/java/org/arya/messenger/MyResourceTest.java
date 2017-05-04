@@ -9,28 +9,21 @@ import javax.ws.rs.Path;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.UriInfo;
+import java.util.List;
 
 /**
  * Created by arya's on 5/1/2017.
  */
 
 @Path("/users")
-@Produces(MediaType.APPLICATION_XML)
-@Consumes(MediaType.APPLICATION_XML)
+@Produces(MediaType.APPLICATION_JSON)
+@Consumes(MediaType.APPLICATION_JSON)
 public class MyResourceTest {
     MessageService messageService= new MessageService();
 
     @GET
-    @Path("/{messageId}")
-    public Message getMessage(@PathParam("messageId") long id, @Context UriInfo uriInfo){
-        Message msg= messageService.getMessage(id);
-        String str=uriInfo.getBaseUriBuilder()
-                .path(MessageResource.class)
-                .path(Long.toString(msg.getId()))
-                .build()
-                .toString();
-        msg.addLink(str,"self");
-        return msg;
+    public List<Message> getMessage(){
+        return messageService.getAllMessages();
     }
 
 }
